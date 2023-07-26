@@ -1,0 +1,27 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+    -   id: check_added_large_files
+    -   id: double-quote-string-fixer
+    -   id: name-tests-test
+    -   id: requirements-txt-fixer
+    -   id: check-ast
+    -   id: check-json
+    -   id: check-toml
+    -   id: check-yaml
+    -   id: fix-encoding-pragma
+-   repo: https://github.com/dayrize/pre-commit/pre-commit-hooks
+    rev: v1.0.0
+    hooks:
+    -   id: prepare-commit-msg
+        stages: [prepare-commit-msg, manual]
+-   repo: https://github.com/psf/black
+    rev: 23.7.0
+    hooks:
+    -   id: black
+        types: [python]
+        stages: [pre-commit, pre-push, manual]
+        language: python

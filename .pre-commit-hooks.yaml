@@ -1,0 +1,68 @@
+-   id: check-added-large-files
+    name: check for added large files
+    description: prevents giant files from being committed.
+    entry: check-added-large-files
+    language: python
+    stages: [commit, push, manual]
+-   id: check-ast
+    name: check python ast
+    description: simply checks whether the files parse as valid python.
+    entry: check-ast
+    language: python
+    types: [python]
+-   id: check-json
+    name: check json
+    description: checks json files for parseable syntax.
+    entry: check-json
+    language: python
+    types: [json]
+-   id: check-toml
+    name: check toml
+    description: checks toml files for parseable syntax.
+    entry: check-toml
+    language: python
+    types: [toml]
+-   id: check-yaml
+    name: check yaml
+    description: checks yaml files for parseable syntax.
+    entry: check-yaml
+    language: python
+    types: [yaml]
+-   id: double-quote-string-fixer
+    name: fix double quoted strings
+    description: replaces double quoted strings with single quoted strings.
+    entry: double-quote-string-fixer
+    language: python
+    types: [python]
+-   id: end-of-file-fixer
+    name: fix end of files
+    description: ensures that a file is either empty, or ends with one newline.
+    entry: end-of-file-fixer
+    language: python
+    types: [text]
+    stages: [commit, push, manual]
+-   id: fix-encoding-pragma
+    name: fix python encoding pragma
+    description: 'adds # -*- coding: utf-8 -*- to the top of python files.'
+    language: python
+    entry: fix-encoding-pragma
+    types: [python]
+-   id: name-tests-test
+    name: python tests naming
+    description: verifies that test files are named correctly.
+    entry: name-tests-test
+    language: python
+    files: (^|/)tests/.+\.py$
+-   id: requirements-txt-fixer
+    name: fix requirements.txt
+    description: sorts entries in requirements.txt.
+    entry: requirements-txt-fixer
+    language: python
+    files: (requirements|constraints).*\.txt$
+-   id: trailing-whitespace
+    name: trim trailing whitespace
+    description: trims trailing whitespace.
+    entry: trailing-whitespace-fixer
+    language: python
+    types: [text]
+    stages: [commit, push, manual]
