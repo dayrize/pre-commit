@@ -1,0 +1,11 @@
+[project]
+name = "pre_commit_hooks"
+authors = [
+    {name = "Edwin Poot", email = "edwin@dayrize.com"},
+]
+description = "Dayrize Pre Commit Hooks"
+requires-python = ">=3.9"
+readme = "README.md"
+keywords = ["dayrize", "git", "pre-commit-hooks"]
+version = "1.0.0"
+
